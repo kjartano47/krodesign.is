@@ -1,0 +1,21 @@
+{
+  "navHome": "Home",
+  "navKeychains": "Keychains",
+  "navMagnets": "Magnets",
+  "navContact": "Contact",
+  "heroTagline": "Designed and made in Akureyri.",
+  "heroIntro": "KRÓ Design creates souvenirs rooted in the environment of Akureyri.",
+  "categoriesTitle": "Categories",
+  "categoryKippurTitle": "Kippur",
+  "categoryKippurDesc": "Keychains inspired by Akureyri.",
+  "categorySeglarTitle": "Seglar",
+  "categorySeglarDesc": "Fridge magnets with the heart-light, marked 'Akureyri'.",
+  "brandStoryTitle": "About KRÓ Design",
+  "brandStory": "KRÓ Design crafts simple, playful souvenirs capturing Akureyri's atmosphere.",
+  "featuredTitle": "Featured product",
+  "featuredDesc": "Traffic-light design with the heart-shaped red light and 'Akureyri' on the side — a small souvenir with a story.",
+  "contactTitle": "Contact",
+  "contactPrompt": "Email for inquiries and orders:",
+  "contactEmail": "kro@krodesign.is",
+  "productPlaceholder": "Product details coming soon."
+}
