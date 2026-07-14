@@ -7,7 +7,7 @@ import enLocale from '../../locales/en.json'
 export default function ProductPage() {
   const { locale, query } = useRouter()
   const t = locale === 'en' ? enLocale : isLocale
-  const slug = Array.isArray(query.product-slug) ? query['product-slug'][0] : query['product-slug']
+  const slug = Array.isArray(query['product-slug']) ? query['product-slug'][0] : query['product-slug']
 
   return (
     <div>

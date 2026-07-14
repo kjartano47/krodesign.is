@@ -1,5 +1,6 @@
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import Seo from '../../components/Seo'
 import isLocale from '../../locales/is.json'
 import enLocale from '../../locales/en.json'
 import { useRouter } from 'next/router'
@@ -10,6 +11,7 @@ export default function Keychains() {
 
   return (
     <div>
+      <Seo title={t.metaTitleKeychains} description={t.metaDescKeychains} />
       <Header />
       <main className="py-20">
         <div className="max-w-4xl mx-auto px-6">
