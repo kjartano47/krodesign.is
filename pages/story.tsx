@@ -8,7 +8,12 @@ export default function Story() {
   const { locale } = useRouter()
   const t = locale === 'en' ? enLocale : isLocale
 
-  const readMoreLinks = [
+  const officialLink = {
+    href: 'https://www.visitakureyri.is/en/see-and-do/attractions/hearts-of-akureyri',
+    text: t.storyLinkOfficial,
+  }
+
+  const pressLinks = [
     { href: 'https://www.akureyri.net/is/mannlif/hrikalega-gaman-og-skemmtilega-galid', text: t.storyLink1 },
     { href: 'https://www.akureyri.net/is/frettir/vegagerdin-vill-raudu-hjortun-burt', text: t.storyLink2 },
     { href: 'https://www.visir.is/g/20252744572d/halla-for-seti-blandar-ser-i-gotu-ljosaumraeduna', text: t.storyLink3 },
@@ -30,8 +35,21 @@ export default function Story() {
           {t.storyTagline && <p className="mb-10 italic text-sm text-gray-500">{t.storyTagline}</p>}
 
           <h2 className="text-2xl font-black mb-6">{t.storyReadMoreTitle}</h2>
+          <div className="grid grid-cols-1 gap-4 mb-6">
+            <a
+              href={officialLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange transition-colors duration-150"
+            >
+              <span>{officialLink.text}</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+          </div>
+
+          {t.storyPressNote && <p className="mb-4 text-sm text-gray-500">{t.storyPressNote}</p>}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {readMoreLinks.map((link) => (
+            {pressLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
