@@ -1,5 +1,3 @@
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import Seo from '../../components/Seo'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -29,9 +27,8 @@ export default function ProductsPage() {
   const isEn = locale === 'en'
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
       <Seo title={t.metaTitleProducts} description={t.metaDescProducts} />
-      <Header />
       <main className="flex-1">
         <section className="bg-kroOrange py-14">
           <div className="max-w-5xl mx-auto px-6">
@@ -53,7 +50,6 @@ export default function ProductsPage() {
           </div>
         </section>
       </main>
-      <Footer />
-    </div>
+    </>
   )
 }

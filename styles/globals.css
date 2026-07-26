@@ -8,6 +8,10 @@ html, body, #__next {
   height: 100%;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background-color: #ffffff;
   color: #111111;
