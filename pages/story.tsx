@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Seo from '../components/Seo'
 import isLocale from '../locales/is.json'
 import enLocale from '../locales/en.json'
 import { useRouter } from 'next/router'
@@ -24,6 +25,7 @@ export default function Story() {
 
   return (
     <div>
+      <Seo title={t.metaTitleStory} description={t.metaDescStory} />
       <Header />
       <main className="py-20">
         <div className="max-w-3xl mx-auto px-6">

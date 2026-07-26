@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import CategoryPreview from '../components/CategoryPreview'
 import Footer from '../components/Footer'
 import Seo from '../components/Seo'
+import OrganizationSchema from '../components/OrganizationSchema'
 import { useRouter } from 'next/router'
 import isLocale from '../locales/is.json'
 import enLocale from '../locales/en.json'
@@ -19,6 +20,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Seo title={t.metaTitleHome} description={t.metaDescHome} />
+      <OrganizationSchema />
       <Header />
       <main className="flex-1">
         <Hero title={t.heroTagline} subtitle={t.heroIntro} />

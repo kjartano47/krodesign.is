@@ -20,7 +20,7 @@ export default function Header() {
           <Link href="/story" locale={locale} className="text-lg font-bold hover:text-kroOrange transition-colors">{t.navStory}</Link>
           <Link href="/contact" locale={locale} className="text-lg font-bold hover:text-kroOrange transition-colors">{t.navContact}</Link>
           <Link
-            href={router.asPath}
+            href={router.pathname}
             locale={locale === 'is' ? 'en' : 'is'}
             className="text-lg font-bold px-4 py-1 bg-black text-white hover:bg-kroOrange transition-colors"
           >

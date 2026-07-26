@@ -7,8 +7,7 @@ type Props = {
 }
 
 const SITE_URL = 'https://krodesign.is'
-// Placeholder until real product/brand photography exists — swap for a proper 1200x630 image.
-const OG_IMAGE = `${SITE_URL}/KR%C3%93Design-logo.svg`
+const OG_IMAGE = `${SITE_URL}/og-image.png`
 
 export default function Seo({ title, description }: Props) {
   const { asPath, locale } = useRouter()
@@ -25,7 +24,7 @@ export default function Seo({ title, description }: Props) {
       <meta property="og:url" content={url} />
       <meta property="og:image" content={OG_IMAGE} />
       <meta property="og:locale" content={locale === 'en' ? 'en_US' : 'is_IS'} />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={OG_IMAGE} />
