@@ -43,6 +43,8 @@
   "contactFormSubmit": "Senda skilaboð",
   "contactFormSuccessTitle": "Takk fyrir!",
   "contactFormSuccessMessage": "Skilaboðin þín hafa verið send. Við höfum samband fljótlega.",
+  "contactFormSubmitting": "Sendi...",
+  "contactFormErrorMessage": "Eitthvað fór úrskeiðis við að senda skilaboðin. Reyndu aftur eða sendu okkur tölvupóst beint.",
   "contactOrEmailDirectly": "Eða sendu okkur tölvupóst beint á:",
   "navStory": "Sagan",
   "storyPageTitle": "Hjartalöguðu ljósin",

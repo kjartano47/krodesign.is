@@ -43,6 +43,8 @@
   "contactFormSubmit": "Send message",
   "contactFormSuccessTitle": "Thank you!",
   "contactFormSuccessMessage": "Your message has been sent. We'll get back to you soon.",
+  "contactFormSubmitting": "Sending...",
+  "contactFormErrorMessage": "Something went wrong sending your message. Please try again or email us directly.",
   "contactOrEmailDirectly": "Or email us directly at:",
   "navStory": "Story",
   "storyPageTitle": "The Heart-Shaped Lights",

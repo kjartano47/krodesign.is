@@ -1,12 +1,30 @@
+import { useState, type FormEvent } from 'react'
 import Seo from '../components/Seo'
 import isLocale from '../locales/is.json'
 import enLocale from '../locales/en.json'
 import { useRouter } from 'next/router'
 
 export default function Contact() {
-  const { locale, query } = useRouter()
+  const { locale } = useRouter()
   const t = locale === 'en' ? enLocale : isLocale
-  const submitted = query.success === 'true'
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setStatus('submitting')
+    const formData = new FormData(event.currentTarget)
+    try {
+      const response = await fetch('/__forms.html', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+      })
+      if (!response.ok) throw new Error('Form submission failed')
+      setStatus('success')
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
     <>
@@ -16,7 +34,7 @@ export default function Contact() {
           <h1 className="text-3xl font-bold mb-4">{t.contactTitle}</h1>
           <p className="mb-8">{t.contactPrompt}</p>
 
-          {submitted ? (
+          {status === 'success' ? (
             <div className="border-2 border-black p-8">
               <h2 className="text-xl font-black mb-2">{t.contactFormSuccessTitle}</h2>
               <p className="text-gray-700">{t.contactFormSuccessMessage}</p>
@@ -24,11 +42,7 @@ export default function Contact() {
           ) : (
             <form
               name="contact"
-              method="POST"
-              data-netlify="true"
-              data-netlify-recaptcha="true"
-              netlify-honeypot="bot-field"
-              action="?success=true"
+              onSubmit={handleSubmit}
               className="text-left space-y-4"
             >
               <input type="hidden" name="form-name" value="contact" />
@@ -49,8 +63,10 @@ export default function Contact() {
                 <label htmlFor="message" className="block font-bold mb-1">{t.contactFormMessageLabel}</label>
                 <textarea id="message" name="message" required rows={5} className="w-full border-2 border-black px-4 py-2" />
               </div>
-              <div data-netlify-recaptcha="true" />
-              <button type="submit" className="btn-orange">{t.contactFormSubmit}</button>
+              {status === 'error' && <p className="text-red-600">{t.contactFormErrorMessage}</p>}
+              <button type="submit" disabled={status === 'submitting'} className="btn-orange disabled:opacity-60">
+                {status === 'submitting' ? t.contactFormSubmitting : t.contactFormSubmit}
+              </button>
             </form>
           )}
 
