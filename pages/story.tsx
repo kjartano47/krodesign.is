@@ -24,44 +24,50 @@ export default function Story() {
   return (
     <>
       <Seo title={t.metaTitleStory} description={t.metaDescStory} />
-      <main className="flex-1 py-20">
-        <div className="max-w-3xl mx-auto px-6">
-          <h1 className="text-3xl font-bold mb-4">{t.storyPageTitle}</h1>
-          {t.storyIntro && <p className="mb-6 text-lg">{t.storyIntro}</p>}
-          {t.storyParagraph1 && <p className="mb-6 text-gray-700">{t.storyParagraph1}</p>}
-          {t.storyParagraph2 && <p className="mb-6 text-gray-700">{t.storyParagraph2}</p>}
-          {t.storyClosing && <p className="mb-6 text-gray-700">{t.storyClosing}</p>}
-          {t.storyTagline && <p className="mb-10 italic text-sm text-gray-500">{t.storyTagline}</p>}
-
-          <h2 className="text-2xl font-black mb-6">{t.storyReadMoreTitle}</h2>
-          <div className="grid grid-cols-1 gap-4 mb-6">
-            <a
-              href={officialLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange transition-colors duration-150"
-            >
-              <span>{officialLink.text}</span>
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </a>
+      <main className="flex-1">
+        <section className="bg-kroOrange py-14">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h1 className="text-5xl font-black text-black">{t.storyPageTitle}</h1>
           </div>
+        </section>
+        <section className="py-20 bg-white border-t-2 border-black">
+          <div className="max-w-3xl mx-auto px-6">
+            {t.storyIntro && <p className="mb-6 text-lg">{t.storyIntro}</p>}
+            {t.storyParagraph1 && <p className="mb-6 text-gray-700">{t.storyParagraph1}</p>}
+            {t.storyParagraph2 && <p className="mb-6 text-gray-700">{t.storyParagraph2}</p>}
+            {t.storyClosing && <p className="mb-6 text-gray-700">{t.storyClosing}</p>}
+            {t.storyTagline && <p className="mb-10 italic text-sm text-gray-500">{t.storyTagline}</p>}
 
-          {t.storyPressNote && <p className="mb-4 text-sm text-gray-500">{t.storyPressNote}</p>}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {pressLinks.map((link) => (
+            <h2 className="text-2xl font-black mb-6">{t.storyReadMoreTitle}</h2>
+            <div className="grid grid-cols-1 gap-4 mb-6">
               <a
-                key={link.href}
-                href={link.href}
+                href={officialLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange transition-colors duration-150"
               >
-                <span>{link.text}</span>
+                <span>{officialLink.text}</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
-            ))}
+            </div>
+
+            {t.storyPressNote && <p className="mb-4 text-sm text-gray-500">{t.storyPressNote}</p>}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {pressLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange transition-colors duration-150"
+                >
+                  <span>{link.text}</span>
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </main>
     </>
   )

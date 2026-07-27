@@ -43,17 +43,26 @@ export default function Header() {
             {locale === 'is' ? 'EN' : 'IS'}
           </Link>
         </nav>
-        <button
-          type="button"
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((open) => !open)}
-          className="md:hidden flex flex-col justify-center gap-1.5 w-10 h-10 shrink-0"
-        >
-          <span className={`block h-0.5 w-7 bg-black transition-transform ${menuOpen ? 'translate-y-2 rotate-45' : ''}`} />
-          <span className={`block h-0.5 w-7 bg-black transition-opacity ${menuOpen ? 'opacity-0' : ''}`} />
-          <span className={`block h-0.5 w-7 bg-black transition-transform ${menuOpen ? '-translate-y-2 -rotate-45' : ''}`} />
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <Link
+            href={router.pathname}
+            locale={locale === 'is' ? 'en' : 'is'}
+            className="text-base font-bold px-3 py-1 bg-black text-white hover:bg-kroOrange transition-colors"
+          >
+            {locale === 'is' ? 'EN' : 'IS'}
+          </Link>
+          <button
+            type="button"
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+            className="flex flex-col justify-center gap-1.5 w-10 h-10 shrink-0"
+          >
+            <span className={`block h-0.5 w-7 bg-black transition-transform ${menuOpen ? 'translate-y-2 rotate-45' : ''}`} />
+            <span className={`block h-0.5 w-7 bg-black transition-opacity ${menuOpen ? 'opacity-0' : ''}`} />
+            <span className={`block h-0.5 w-7 bg-black transition-transform ${menuOpen ? '-translate-y-2 -rotate-45' : ''}`} />
+          </button>
+        </div>
       </div>
       {menuOpen && (
         <nav className="md:hidden flex flex-col gap-1 px-6 pb-4 border-t-2 border-black">
@@ -61,13 +70,6 @@ export default function Header() {
           <Link href="/products" locale={locale} className={`${navLinkClass} py-3`}>{t.navProducts}</Link>
           <Link href="/story" locale={locale} className={`${navLinkClass} py-3`}>{t.navStory}</Link>
           <Link href="/contact" locale={locale} className={`${navLinkClass} py-3`}>{t.navContact}</Link>
-          <Link
-            href={router.pathname}
-            locale={locale === 'is' ? 'en' : 'is'}
-            className="text-lg font-bold px-4 py-2 bg-black text-white hover:bg-kroOrange transition-colors w-fit mt-2"
-          >
-            {locale === 'is' ? 'EN' : 'IS'}
-          </Link>
         </nav>
       )}
     </header>

@@ -5,14 +5,26 @@ import OrganizationSchema from '../components/OrganizationSchema'
 import { useRouter } from 'next/router'
 import isLocale from '../locales/is.json'
 import enLocale from '../locales/en.json'
+import { getProductFrames } from '../lib/product360'
+import type { GetStaticProps } from 'next'
 
-export default function Home() {
+export const getStaticProps: GetStaticProps = async () => {
+  const images = {
+    keychains: getProductFrames('keychains')[0] ?? null,
+    'fridge-magnets': getProductFrames('fridge-magnets')[0] ?? null,
+    'fidget-toy': getProductFrames('fidget-toy')[0] ?? null,
+  }
+  return { props: { images } }
+}
+
+export default function Home({ images }: { images: Record<string, string | null> }) {
   const { locale } = useRouter()
   const t = locale === 'en' ? enLocale : isLocale
 
   const categories = [
-    { slug: 'keychains', title: t.categoryKippurTitle, desc: t.categoryKippurDesc },
-    { slug: 'fridge-magnets', title: t.categorySeglarTitle, desc: t.categorySeglarDesc }
+    { slug: 'keychains', title: t.categoryKippurTitle, desc: t.categoryKippurDesc, image: images.keychains },
+    { slug: 'fridge-magnets', title: t.categorySeglarTitle, desc: t.categorySeglarDesc, image: images['fridge-magnets'] },
+    { slug: 'fidget-toy', title: t.categoryFiktleikfangTitle, desc: t.categoryFiktleikfangDesc, image: images['fidget-toy'] }
   ]
 
   return (

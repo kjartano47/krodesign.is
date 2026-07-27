@@ -29,51 +29,57 @@ export default function Contact() {
   return (
     <>
       <Seo title={t.metaTitleContact} description={t.metaDescContact} />
-      <main className="flex-1 py-20">
-        <div className="max-w-xl mx-auto px-6 text-center">
-          <h1 className="text-3xl font-bold mb-4">{t.contactTitle}</h1>
-          <p className="mb-8">{t.contactPrompt}</p>
+      <main className="flex-1">
+        <section className="bg-kroOrange py-14">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <h1 className="text-5xl font-black text-black">{t.contactTitle}</h1>
+          </div>
+        </section>
+        <section className="py-20 bg-white border-t-2 border-black">
+          <div className="max-w-xl mx-auto px-6 text-center">
+            <p className="mb-8">{t.contactPrompt}</p>
 
-          {status === 'success' ? (
-            <div className="border-2 border-black p-8">
-              <h2 className="text-xl font-black mb-2">{t.contactFormSuccessTitle}</h2>
-              <p className="text-gray-700">{t.contactFormSuccessMessage}</p>
-            </div>
-          ) : (
-            <form
-              name="contact"
-              onSubmit={handleSubmit}
-              className="text-left space-y-4"
-            >
-              <input type="hidden" name="form-name" value="contact" />
-              <p className="hidden">
-                <label>
-                  Don&apos;t fill this out: <input name="bot-field" />
-                </label>
-              </p>
-              <div>
-                <label htmlFor="name" className="block font-bold mb-1">{t.contactFormNameLabel}</label>
-                <input id="name" name="name" type="text" required className="w-full border-2 border-black px-4 py-2" />
+            {status === 'success' ? (
+              <div className="border-2 border-black p-8">
+                <h2 className="text-xl font-black mb-2">{t.contactFormSuccessTitle}</h2>
+                <p className="text-gray-700">{t.contactFormSuccessMessage}</p>
               </div>
-              <div>
-                <label htmlFor="email" className="block font-bold mb-1">{t.contactFormEmailLabel}</label>
-                <input id="email" name="email" type="email" required className="w-full border-2 border-black px-4 py-2" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block font-bold mb-1">{t.contactFormMessageLabel}</label>
-                <textarea id="message" name="message" required rows={5} className="w-full border-2 border-black px-4 py-2" />
-              </div>
-              {status === 'error' && <p className="text-red-600">{t.contactFormErrorMessage}</p>}
-              <button type="submit" disabled={status === 'submitting'} className="btn-orange disabled:opacity-60">
-                {status === 'submitting' ? t.contactFormSubmitting : t.contactFormSubmit}
-              </button>
-            </form>
-          )}
+            ) : (
+              <form
+                name="contact"
+                onSubmit={handleSubmit}
+                className="text-left space-y-4"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don&apos;t fill this out: <input name="bot-field" />
+                  </label>
+                </p>
+                <div>
+                  <label htmlFor="name" className="block font-bold mb-1">{t.contactFormNameLabel}</label>
+                  <input id="name" name="name" type="text" required className="w-full border-2 border-black px-4 py-2" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block font-bold mb-1">{t.contactFormEmailLabel}</label>
+                  <input id="email" name="email" type="email" required className="w-full border-2 border-black px-4 py-2" />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block font-bold mb-1">{t.contactFormMessageLabel}</label>
+                  <textarea id="message" name="message" required rows={5} className="w-full border-2 border-black px-4 py-2" />
+                </div>
+                {status === 'error' && <p className="text-red-600">{t.contactFormErrorMessage}</p>}
+                <button type="submit" disabled={status === 'submitting'} className="btn-orange disabled:opacity-60">
+                  {status === 'submitting' ? t.contactFormSubmitting : t.contactFormSubmit}
+                </button>
+              </form>
+            )}
 
-          <p className="mt-8 text-sm text-gray-600">
-            {t.contactOrEmailDirectly} <a href={`mailto:${t.contactEmail}`} className="font-bold hover:text-kroOrange">{t.contactEmail}</a>
-          </p>
-        </div>
+            <p className="mt-8 text-sm text-gray-600">
+              {t.contactOrEmailDirectly} <a href={`mailto:${t.contactEmail}`} className="font-bold hover:text-kroOrange">{t.contactEmail}</a>
+            </p>
+          </div>
+        </section>
       </main>
     </>
   )
