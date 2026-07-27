@@ -16,7 +16,17 @@ export default function Privacy() {
           <p className="mb-6 text-gray-700">{t.privacyIntro}</p>
           <p className="mb-6 text-gray-700">{t.privacyParagraph1}</p>
           <p className="mb-6 text-gray-700">{t.privacyParagraph2}</p>
-          <p className="mb-6 text-gray-700">{t.privacyParagraph3}</p>
+          <p className="mb-6 text-gray-700">
+            {t.privacyParagraph3}{' '}
+            <a
+              href="https://www.netlify.com/privacy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold hover:text-kroOrange"
+            >
+              {t.privacyNetlifyLinkText}
+            </a>
+          </p>
           <p className="text-gray-700">
             {t.privacyContactNote} <a href={`mailto:${t.contactEmail}`} className="font-bold hover:text-kroOrange">{t.contactEmail}</a>
           </p>

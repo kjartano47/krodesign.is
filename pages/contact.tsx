@@ -28,7 +28,7 @@ export default function Contact() {
               data-netlify="true"
               data-netlify-recaptcha="true"
               netlify-honeypot="bot-field"
-              action="/contact?success=true"
+              action="?success=true"
               className="text-left space-y-4"
             >
               <input type="hidden" name="form-name" value="contact" />
