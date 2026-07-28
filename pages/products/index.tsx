@@ -48,7 +48,7 @@ export default function ProductsPage({ images }: { images: Record<string, string
       <main className="flex-1">
         <section className="bg-kroOrange py-14">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h1 className="text-5xl font-black text-black">{t.navProducts}</h1>
+            <h1 className="text-5xl font-black text-black break-words">{t.navProducts}</h1>
           </div>
         </section>
         <section className="py-12 bg-white border-t-2 border-black">

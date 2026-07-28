@@ -25,7 +25,7 @@ export default function FidgetToy({ fidgetFrames }: { fidgetFrames: string[] }) 
             className="aspect-square max-w-md mx-auto"
           />
           <div>
-            <h1 className="text-3xl font-bold mb-4">{t.categoryFiktleikfangTitle}</h1>
+            <h1 className="text-3xl font-bold mb-4 break-words">{t.categoryFiktleikfangTitle}</h1>
             <p className="text-gray-700 mb-6">{t.categoryFiktleikfangDesc}</p>
           </div>
         </div>

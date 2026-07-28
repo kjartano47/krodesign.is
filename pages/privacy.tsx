@@ -12,7 +12,7 @@ export default function Privacy() {
       <Seo title={t.metaTitlePrivacy} description={t.metaDescPrivacy} />
       <main className="flex-1 py-20">
         <div className="max-w-3xl mx-auto px-6">
-          <h1 className="text-3xl font-bold mb-4">{t.privacyPageTitle}</h1>
+          <h1 className="text-3xl font-bold mb-4 break-words">{t.privacyPageTitle}</h1>
           <p className="mb-6 text-gray-700">{t.privacyIntro}</p>
           <p className="mb-6 text-gray-700">{t.privacyParagraph1}</p>
           <p className="mb-6 text-gray-700">{t.privacyParagraph2}</p>

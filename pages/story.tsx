@@ -7,6 +7,8 @@ export default function Story() {
   const { locale } = useRouter()
   const t = locale === 'en' ? enLocale : isLocale
 
+  const newTabHint = locale === 'en' ? ' (opens in new tab)' : ' (opnast í nýjum flipa)'
+
   const officialLink = {
     href: 'https://www.visitakureyri.is/en/see-and-do/attractions/hearts-of-akureyri',
     text: t.storyLinkOfficial,
@@ -25,12 +27,12 @@ export default function Story() {
     <>
       <Seo title={t.metaTitleStory} description={t.metaDescStory} />
       <main className="flex-1">
-        <section className="bg-kroOrange py-14">
+        <section className="bg-kroOrange py-10 sm:py-14">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h1 className="text-5xl font-black text-black">{t.storyPageTitle}</h1>
+            <h1 className="text-4xl sm:text-5xl font-black text-black break-words">{t.storyPageTitle}</h1>
           </div>
         </section>
-        <section className="py-20 bg-white border-t-2 border-black">
+        <section className="py-12 sm:py-20 bg-white border-t-2 border-black">
           <div className="max-w-3xl mx-auto px-6">
             {t.storyIntro && <p className="mb-6 text-lg">{t.storyIntro}</p>}
             {t.storyParagraph1 && <p className="mb-6 text-gray-700">{t.storyParagraph1}</p>}
@@ -44,9 +46,12 @@ export default function Story() {
                 href={officialLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange transition-colors duration-150"
+                className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange active:bg-kroOrange transition-colors duration-150"
               >
-                <span>{officialLink.text}</span>
+                <span>
+                  {officialLink.text}
+                  <span className="sr-only">{newTabHint}</span>
+                </span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>
@@ -59,9 +64,12 @@ export default function Story() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange transition-colors duration-150"
+                  className="group flex items-center justify-between gap-3 border-2 border-black px-5 py-4 font-bold hover:bg-kroOrange active:bg-kroOrange transition-colors duration-150"
                 >
-                  <span>{link.text}</span>
+                  <span>
+                    {link.text}
+                    <span className="sr-only">{newTabHint}</span>
+                  </span>
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               ))}

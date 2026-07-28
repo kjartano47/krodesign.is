@@ -25,7 +25,7 @@ export default function Keychains({ keychainFrames }: { keychainFrames: string[]
             className="aspect-square max-w-md mx-auto"
           />
           <div>
-            <h1 className="text-3xl font-bold mb-4">{t.categoryKippurTitle}</h1>
+            <h1 className="text-3xl font-bold mb-4 break-words">{t.categoryKippurTitle}</h1>
             <p className="text-gray-700 mb-6">{t.categoryKippurDesc}</p>
           </div>
         </div>

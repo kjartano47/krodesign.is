@@ -32,7 +32,7 @@ export default function Contact() {
       <main className="flex-1">
         <section className="bg-kroOrange py-14">
           <div className="max-w-6xl mx-auto px-6 text-center">
-            <h1 className="text-5xl font-black text-black">{t.contactTitle}</h1>
+            <h1 className="text-5xl font-black text-black break-words">{t.contactTitle}</h1>
           </div>
         </section>
         <section className="py-20 bg-white border-t-2 border-black">
