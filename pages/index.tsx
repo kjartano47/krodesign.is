@@ -31,10 +31,10 @@ export default function Home({ images }: { images: Record<string, string | null>
       <main className="flex-1">
         <Hero title={t.heroTagline} subtitle={t.heroIntro} />
         <CategoryPreview categories={categories} title={t.categoriesTitle} />
-        <section className="py-12 bg-white border-t-2 border-black">
+        <section className="py-12 bg-white dark:bg-neutral-900 border-t-2 border-black dark:border-white">
           <div className="max-w-6xl mx-auto px-6">
             <h2 className="text-3xl font-black mb-4">{t.brandStoryTitle}</h2>
-            <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">{t.brandStory}</p>
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-2xl">{t.brandStory}</p>
           </div>
         </section>
         <section className="py-12 bg-black text-white border-t-2 border-black">

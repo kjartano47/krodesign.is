@@ -10,10 +10,10 @@ export default function Privacy() {
       <main className="flex-1 py-20">
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-3xl font-bold mb-4 break-words">{t.privacyPageTitle}</h1>
-          <p className="mb-6 text-gray-700">{t.privacyIntro}</p>
-          <p className="mb-6 text-gray-700">{t.privacyParagraph1}</p>
-          <p className="mb-6 text-gray-700">{t.privacyParagraph2}</p>
-          <p className="mb-6 text-gray-700">
+          <p className="mb-6 text-gray-700 dark:text-gray-300">{t.privacyIntro}</p>
+          <p className="mb-6 text-gray-700 dark:text-gray-300">{t.privacyParagraph1}</p>
+          <p className="mb-6 text-gray-700 dark:text-gray-300">{t.privacyParagraph2}</p>
+          <p className="mb-6 text-gray-700 dark:text-gray-300">
             {t.privacyParagraph3}{' '}
             <a
               href="https://www.netlify.com/privacy/"
@@ -24,7 +24,7 @@ export default function Privacy() {
               {t.privacyNetlifyLinkText}
             </a>
           </p>
-          <p className="text-gray-700">
+          <p className="text-gray-700 dark:text-gray-300">
             {t.privacyContactNote} <a href={`mailto:${t.contactEmail}`} className="font-bold hover:text-kroOrange">{t.contactEmail}</a>
           </p>
         </div>

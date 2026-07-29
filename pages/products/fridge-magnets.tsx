@@ -23,7 +23,7 @@ export default function FridgeMagnets({ magnetFrames }: { magnetFrames: string[]
           />
           <div>
             <h1 className="text-3xl font-bold mb-4 break-words">{t.categorySeglarTitle}</h1>
-            <p className="text-gray-700 mb-6">{t.categorySeglarDesc}</p>
+            <p className="text-gray-700 dark:text-gray-300 mb-6">{t.categorySeglarDesc}</p>
           </div>
         </div>
       </main>
