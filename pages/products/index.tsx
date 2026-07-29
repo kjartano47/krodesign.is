@@ -20,11 +20,11 @@ const products = [
     descEn: 'Fridge magnet with the heart-light, marked Akureyri',
   },
   {
-    slug: 'fidget-toy',
-    titleIs: 'Fiktleikfang',
-    descIs: 'Fiktleikfang á lyklakippu með hjarta-ljósinu, merkt Akureyri',
-    titleEn: 'Fidget Toy Keychain',
-    descEn: 'Fidget toy keychain with the heart-light, marked Akureyri',
+    slug: 'fidget-keychain',
+    titleIs: 'Fikt-lyklakippa',
+    descIs: 'Fikt-lyklakippa með hjarta-ljósinu, merkt Akureyri',
+    titleEn: 'Fidget Keychain',
+    descEn: 'Fidget keychain with the heart-light, marked Akureyri',
   },
 ]
 

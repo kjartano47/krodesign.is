@@ -5,10 +5,10 @@ import { getProductFrames } from '../../lib/product360'
 import type { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
-  return { props: { fidgetFrames: getProductFrames('fidget-toy') } }
+  return { props: { fidgetFrames: getProductFrames('fidget-keychain') } }
 }
 
-export default function FidgetToy({ fidgetFrames }: { fidgetFrames: string[] }) {
+export default function FidgetKeychain({ fidgetFrames }: { fidgetFrames: string[] }) {
   const { t } = useTranslations()
 
   return (
@@ -18,12 +18,12 @@ export default function FidgetToy({ fidgetFrames }: { fidgetFrames: string[] }) 
         <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <Product360
             images={fidgetFrames}
-            alt={t.categoryFiktleikfangTitle}
+            alt={t.categoryFiktLyklakippaTitle}
             className="aspect-square max-w-md mx-auto"
           />
           <div>
-            <h1 className="text-3xl font-bold mb-4 break-words">{t.categoryFiktleikfangTitle}</h1>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">{t.categoryFiktleikfangDesc}</p>
+            <h1 className="text-3xl font-bold mb-4 break-words">{t.categoryFiktLyklakippaTitle}</h1>
+            <p className="text-gray-700 dark:text-gray-300 mb-6">{t.categoryFiktLyklakippaDesc}</p>
           </div>
         </div>
       </main>
