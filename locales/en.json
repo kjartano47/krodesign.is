@@ -71,7 +71,7 @@
   "notFoundCta": "Back to home",
   "privacyPageTitle": "Privacy Policy",
   "privacyIntro": "This page explains what information KRÓ Design collects when you visit this website, and how it's used.",
-  "privacyParagraph1": "This website does not use analytics or advertising trackers. The contact form is protected by Google reCAPTCHA to reduce spam, which may set its own cookies as described in Google's privacy policy.",
+  "privacyParagraph1": "This website does not use analytics or advertising trackers. The contact form is protected against spam using a hidden honeypot field and Netlify's built-in spam filtering; no Google services or cookies are involved.",
   "privacyParagraph2": "If you use the contact form, your submission (name, email, and message) is processed and stored by our hosting and form provider, Netlify, Inc., solely to deliver your message to us. If you email us directly instead, we use your message and contact details only to respond to your inquiry or order. We do not use this information for any other purpose.",
   "privacyParagraph3": "This website is hosted by Netlify, Inc., whose infrastructure is located primarily in the United States, meaning some data (including contact form submissions and standard technical information such as IP address and browser type) is transferred outside Iceland and the European Economic Area. This transfer is covered by Standard Contractual Clauses, as described in Netlify's own privacy policy.",
   "privacyNetlifyLinkText": "Learn more about how Netlify handles data",

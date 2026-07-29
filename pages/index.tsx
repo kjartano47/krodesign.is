@@ -2,9 +2,7 @@ import Hero from '../components/Hero'
 import CategoryPreview from '../components/CategoryPreview'
 import Seo from '../components/Seo'
 import OrganizationSchema from '../components/OrganizationSchema'
-import { useRouter } from 'next/router'
-import isLocale from '../locales/is.json'
-import enLocale from '../locales/en.json'
+import { useTranslations } from '../lib/useTranslations'
 import { getProductFrames } from '../lib/product360'
 import type { GetStaticProps } from 'next'
 
@@ -18,8 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export default function Home({ images }: { images: Record<string, string | null> }) {
-  const { locale } = useRouter()
-  const t = locale === 'en' ? enLocale : isLocale
+  const { t } = useTranslations()
 
   const categories = [
     { slug: 'keychains', title: t.categoryKippurTitle, desc: t.categoryKippurDesc, image: images.keychains },
@@ -36,13 +33,13 @@ export default function Home({ images }: { images: Record<string, string | null>
         <CategoryPreview categories={categories} title={t.categoriesTitle} />
         <section className="py-12 bg-white border-t-2 border-black">
           <div className="max-w-6xl mx-auto px-6">
-            <h3 className="text-3xl font-black mb-4">{t.brandStoryTitle}</h3>
+            <h2 className="text-3xl font-black mb-4">{t.brandStoryTitle}</h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">{t.brandStory}</p>
           </div>
         </section>
         <section className="py-12 bg-black text-white border-t-2 border-black">
           <div className="max-w-6xl mx-auto px-6">
-            <h3 className="text-3xl font-black mb-4 text-kroOrange">{t.storeTitle}</h3>
+            <h2 className="text-3xl font-black mb-4 text-kroOrange">{t.storeTitle}</h2>
             <p className="text-gray-300 text-lg leading-relaxed max-w-2xl mb-6">{t.storeDesc}</p>
             <div className="flex flex-col sm:flex-row sm:items-center gap-6">
               <div>

@@ -1,8 +1,6 @@
 import Seo from '../../components/Seo'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import isLocale from '../../locales/is.json'
-import enLocale from '../../locales/en.json'
+import { useTranslations } from '../../lib/useTranslations'
 import { getProductFrames } from '../../lib/product360'
 import type { GetStaticProps } from 'next'
 
@@ -38,8 +36,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export default function ProductsPage({ images }: { images: Record<string, string | null> }) {
-  const { locale } = useRouter()
-  const t = locale === 'en' ? enLocale : isLocale
+  const { locale, t } = useTranslations()
   const isEn = locale === 'en'
 
   return (

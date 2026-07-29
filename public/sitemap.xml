@@ -26,6 +26,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/fridge-magnets" />
   </url>
   <url>
+    <loc>https://krodesign.is/products/fidget-toy</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/fidget-toy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/fidget-toy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/fidget-toy" />
+  </url>
+  <url>
     <loc>https://krodesign.is/story</loc>
     <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/story" />
     <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/story" />

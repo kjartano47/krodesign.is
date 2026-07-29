@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 
 type Product360Props = {
   images: string[]
@@ -10,9 +10,12 @@ export default function Product360({ images, alt, className = '' }: Product360Pr
   const [frame, setFrame] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const draggingRef = useRef(false)
+  const preloadedRef = useRef(false)
 
-  useEffect(() => {
-    images.forEach((src) => {
+  const preloadRemainingFrames = useCallback(() => {
+    if (preloadedRef.current) return
+    preloadedRef.current = true
+    images.slice(1).forEach((src) => {
       const img = new window.Image()
       img.src = src
     })
@@ -33,9 +36,11 @@ export default function Product360({ images, alt, className = '' }: Product360Pr
   return (
     <div
       ref={containerRef}
+      onMouseEnter={preloadRemainingFrames}
       onMouseMove={(e) => setFrameFromX(e.clientX)}
       onTouchStart={() => {
         draggingRef.current = true
+        preloadRemainingFrames()
       }}
       onTouchEnd={() => {
         draggingRef.current = false

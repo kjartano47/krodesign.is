@@ -1,11 +1,8 @@
 import Seo from '../components/Seo'
-import isLocale from '../locales/is.json'
-import enLocale from '../locales/en.json'
-import { useRouter } from 'next/router'
+import { useTranslations } from '../lib/useTranslations'
 
 export default function Story() {
-  const { locale } = useRouter()
-  const t = locale === 'en' ? enLocale : isLocale
+  const { locale, t } = useTranslations()
 
   const newTabHint = locale === 'en' ? ' (opens in new tab)' : ' (opnast í nýjum flipa)'
 

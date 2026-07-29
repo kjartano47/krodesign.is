@@ -1,13 +1,11 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import isLocale from '../locales/is.json'
-import enLocale from '../locales/en.json'
+import { useTranslations } from '../lib/useTranslations'
 
 export default function Header() {
   const router = useRouter()
-  const { locale } = router
-  const t = locale === 'en' ? enLocale : isLocale
+  const { locale, t } = useTranslations()
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {

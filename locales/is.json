@@ -71,7 +71,7 @@
   "notFoundCta": "Til baka á forsíðu",
   "privacyPageTitle": "Persónuverndarstefna",
   "privacyIntro": "Þessi síða útskýrir hvaða upplýsingum KRÓ Design safnar þegar þú heimsækir þessa vefsíðu og hvernig þær eru notaðar.",
-  "privacyParagraph1": "Þessi vefsíða notar hvorki greiningartól né auglýsingamælingar. Tengiliðaeyðublaðið er varið með Google reCAPTCHA til að draga úr ruslpósti, sem kann að setja eigin vefkökur samkvæmt persónuverndarstefnu Google.",
+  "privacyParagraph1": "Þessi vefsíða notar hvorki greiningartól né auglýsingamælingar. Tengiliðaeyðublaðið er varið gegn ruslpósti með földum gildrureit og innbyggðri ruslpóstsíu Netlify. Google kemur þar hvergi við sögu.",
   "privacyParagraph2": "Ef þú notar tengiliðaeyðublaðið eru upplýsingarnar sem þú sendir inn (nafn, netfang og skilaboð) unnar og geymdar af hýsingar- og eyðublaðaþjónustu okkar, Netlify, Inc., eingöngu til að koma skilaboðunum til okkar. Ef þú sendir okkur tölvupóst í staðinn notum við skilaboðin og tengiliðaupplýsingarnar eingöngu til að svara fyrirspurn þinni eða pöntun. Við notum þessar upplýsingar ekki í neinum öðrum tilgangi.",
   "privacyParagraph3": "Þessi vefsíða er hýst hjá Netlify, Inc., en innviðir þeirra eru aðallega staðsettir í Bandaríkjunum, sem þýðir að ákveðin gögn (þar á meðal skilaboð úr tengiliðaeyðublaðinu og grunn tæknilegar upplýsingar á borð við IP-tölu og tegund vafra) eru flutt út fyrir Ísland og Evrópska efnahagssvæðið. Þessi flutningur er tryggður með stöðluðum samningsskilmálum (Standard Contractual Clauses), líkt og lýst er í persónuverndarstefnu Netlify.",
   "privacyNetlifyLinkText": "Sjá nánar hvernig Netlify meðhöndlar gögn",

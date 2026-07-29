@@ -1,12 +1,9 @@
 import { useState, type FormEvent } from 'react'
 import Seo from '../components/Seo'
-import isLocale from '../locales/is.json'
-import enLocale from '../locales/en.json'
-import { useRouter } from 'next/router'
+import { useTranslations } from '../lib/useTranslations'
 
 export default function Contact() {
-  const { locale } = useRouter()
-  const t = locale === 'en' ? enLocale : isLocale
+  const { t } = useTranslations()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {

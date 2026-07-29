@@ -1,11 +1,8 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import isLocale from '../locales/is.json'
-import enLocale from '../locales/en.json'
+import { useTranslations } from '../lib/useTranslations'
 
 export default function Footer() {
-  const { locale } = useRouter()
-  const t = locale === 'en' ? enLocale : isLocale
+  const { locale, t } = useTranslations()
 
   return (
     <footer className="bg-black text-white py-10 border-t-2 border-black">

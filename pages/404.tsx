@@ -1,12 +1,9 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import Seo from '../components/Seo'
-import isLocale from '../locales/is.json'
-import enLocale from '../locales/en.json'
+import { useTranslations } from '../lib/useTranslations'
 
 export default function NotFound() {
-  const { locale } = useRouter()
-  const t = locale === 'en' ? enLocale : isLocale
+  const { locale, t } = useTranslations()
 
   return (
     <>
