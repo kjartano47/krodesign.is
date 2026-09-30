@@ -14,22 +14,52 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products" />
   </url>
   <url>
-    <loc>https://krodesign.is/products/keychains</loc>
-    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/keychains" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/keychains" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/keychains" />
+    <loc>https://krodesign.is/products/souvenirs</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/souvenirs" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/souvenirs" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/souvenirs" />
   </url>
   <url>
-    <loc>https://krodesign.is/products/fridge-magnets</loc>
-    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/fridge-magnets" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/fridge-magnets" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/fridge-magnets" />
+    <loc>https://krodesign.is/products/souvenirs/keychains</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/souvenirs/keychains" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/souvenirs/keychains" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/souvenirs/keychains" />
   </url>
   <url>
-    <loc>https://krodesign.is/products/fidget-keychain</loc>
-    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/fidget-keychain" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/fidget-keychain" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/fidget-keychain" />
+    <loc>https://krodesign.is/products/souvenirs/fridge-magnets</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/souvenirs/fridge-magnets" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/souvenirs/fridge-magnets" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/souvenirs/fridge-magnets" />
+  </url>
+  <url>
+    <loc>https://krodesign.is/products/souvenirs/fidget-keychain</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/souvenirs/fidget-keychain" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/souvenirs/fidget-keychain" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/souvenirs/fidget-keychain" />
+  </url>
+  <url>
+    <loc>https://krodesign.is/products/lanterns</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/lanterns" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/lanterns" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/lanterns" />
+  </url>
+  <url>
+    <loc>https://krodesign.is/products/lanterns/lighthouse</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/lanterns/lighthouse" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/lanterns/lighthouse" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/lanterns/lighthouse" />
+  </url>
+  <url>
+    <loc>https://krodesign.is/products/lanterns/akureyrarkirkja</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/lanterns/akureyrarkirkja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/lanterns/akureyrarkirkja" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/lanterns/akureyrarkirkja" />
+  </url>
+  <url>
+    <loc>https://krodesign.is/products/lanterns/igloo</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://krodesign.is/products/lanterns/igloo" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://krodesign.is/en/products/lanterns/igloo" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://krodesign.is/products/lanterns/igloo" />
   </url>
   <url>
     <loc>https://krodesign.is/story</loc>

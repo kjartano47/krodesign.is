@@ -6,7 +6,8 @@ import ThemeToggle from './ThemeToggle'
 
 export default function Header() {
   const router = useRouter()
-  const { locale, t } = useTranslations()
+  const { asPath, locale } = router
+  const { t } = useTranslations()
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -16,6 +17,12 @@ export default function Header() {
   }, [router.events])
 
   const navLinkClass = 'text-lg font-bold hover:text-kroOrange transition-colors'
+  const navItems = [
+    { href: '/', label: t.navHome },
+    { href: '/products', label: t.navProducts },
+    { href: '/story', label: t.navStory },
+    { href: '/contact', label: t.navContact },
+  ]
 
   return (
     <header className="bg-white dark:bg-neutral-900 border-b-2 border-black dark:border-white sticky top-0 z-10">
@@ -30,13 +37,12 @@ export default function Header() {
           />
         </Link>
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/" locale={locale} className={navLinkClass}>{t.navHome}</Link>
-          <Link href="/products" locale={locale} className={navLinkClass}>{t.navProducts}</Link>
-          <Link href="/story" locale={locale} className={navLinkClass}>{t.navStory}</Link>
-          <Link href="/contact" locale={locale} className={navLinkClass}>{t.navContact}</Link>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} locale={locale} className={navLinkClass}>{item.label}</Link>
+          ))}
           <ThemeToggle className="w-9 h-9" />
           <Link
-            href={router.pathname}
+            href={asPath}
             locale={locale === 'is' ? 'en' : 'is'}
             className="text-lg font-bold px-4 py-1 bg-black text-white hover:bg-kroOrange hover:text-black transition-colors"
           >
@@ -46,7 +52,7 @@ export default function Header() {
         <div className="md:hidden flex items-center gap-3">
           <ThemeToggle className="w-8 h-8" />
           <Link
-            href={router.pathname}
+            href={asPath}
             locale={locale === 'is' ? 'en' : 'is'}
             className="text-base font-bold px-3 py-1 bg-black text-white hover:bg-kroOrange hover:text-black transition-colors"
           >
@@ -67,10 +73,9 @@ export default function Header() {
       </div>
       {menuOpen && (
         <nav className="md:hidden flex flex-col gap-1 px-6 pb-4 border-t-2 border-black dark:border-white">
-          <Link href="/" locale={locale} className={`${navLinkClass} py-3`}>{t.navHome}</Link>
-          <Link href="/products" locale={locale} className={`${navLinkClass} py-3`}>{t.navProducts}</Link>
-          <Link href="/story" locale={locale} className={`${navLinkClass} py-3`}>{t.navStory}</Link>
-          <Link href="/contact" locale={locale} className={`${navLinkClass} py-3`}>{t.navContact}</Link>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} locale={locale} className={`${navLinkClass} py-3`}>{item.label}</Link>
+          ))}
         </nav>
       )}
     </header>

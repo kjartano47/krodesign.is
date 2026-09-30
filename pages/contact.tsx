@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import Seo from '../components/Seo'
+import PageBanner from '../components/PageBanner'
 import { useTranslations } from '../lib/useTranslations'
 
 export default function Contact() {
@@ -27,11 +28,7 @@ export default function Contact() {
     <>
       <Seo title={t.metaTitleContact} description={t.metaDescContact} />
       <main className="flex-1">
-        <section className="bg-kroOrange py-14">
-          <div className="max-w-6xl mx-auto px-6 text-center">
-            <h1 className="text-5xl font-black text-black break-words">{t.contactTitle}</h1>
-          </div>
-        </section>
+        <PageBanner title={t.contactTitle} />
         <section className="py-20 bg-white dark:bg-neutral-900 border-t-2 border-black dark:border-white">
           <div className="max-w-xl mx-auto px-6 text-center">
             <p className="mb-8">{t.contactPrompt}</p>

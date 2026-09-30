@@ -9,7 +9,7 @@ const schema = {
   url: SITE_URL,
   logo: `${SITE_URL}/og-image.png`,
   description:
-    "KRÓ Design creates souvenirs inspired by Akureyri, Iceland, including keychains and fridge magnets featuring the town's heart-shaped traffic lights.",
+    "KRÓ Design creates lanterns, fidgets, souvenirs and other fun stuff, designed and made in Akureyri, Iceland.",
   email: 'kro@krodesign.is',
   areaServed: {
     '@type': 'City',

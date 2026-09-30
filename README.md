@@ -1,6 +1,6 @@
 # KRÓ Design website
 
-The website for KRÓ Design, a souvenir brand based in Akureyri, Iceland (keychains and fridge magnets featuring Akureyri's heart-shaped traffic lights). The site is informational and catalog only, it directs visitors to buy in person at Kista, inside Menningarhúsið Hof.
+The website for KRÓ Design, a design brand based in Akureyri, Iceland making lanterns, fidgets, souvenirs and more (including keychains and fridge magnets featuring Akureyri's heart-shaped traffic lights). The site is informational and catalog only, it directs visitors to buy in person at Kista, inside Menningarhúsið Hof.
 
 Built with Next.js (Pages Router), TypeScript, and Tailwind CSS, with bilingual support (Icelandic default at `/`, English at `/en`).
 
