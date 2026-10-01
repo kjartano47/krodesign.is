@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import Seo from '../components/Seo'
 import PageBanner from '../components/PageBanner'
+import SocialLinks from '../components/SocialLinks'
 import { useTranslations } from '../lib/useTranslations'
 
 export default function Contact() {
@@ -72,6 +73,7 @@ export default function Contact() {
             <p className="mt-8 text-sm text-gray-600 dark:text-gray-400">
               {t.contactOrEmailDirectly} <a href={`mailto:${t.contactEmail}`} className="font-bold hover:text-kroOrange">{t.contactEmail}</a>
             </p>
+            <SocialLinks className="justify-center mt-4 text-gray-600 dark:text-gray-400" />
           </div>
         </section>
       </main>

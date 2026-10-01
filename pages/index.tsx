@@ -55,12 +55,6 @@ export default function Home({ images }: { images: Record<string, string[]> }) {
             </div>
           </div>
         </section>
-        <section className="py-12 bg-white dark:bg-neutral-900 border-t-2 border-black dark:border-white">
-          <div className="max-w-6xl mx-auto px-6">
-            <h2 className="text-3xl font-black mb-4">{t.brandStoryTitle}</h2>
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-2xl">{t.brandStory}</p>
-          </div>
-        </section>
         {/* Kista storefront banner stashed 2026-09-30: Kista isn't selling our product again until next year.
             Re-enable this section (and the storeTitle/storeDesc/storeName/storeAddress/storePhone/storeCta
             locale keys, still intact in locales/*.json) once the listing resumes. */}
