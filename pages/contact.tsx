@@ -20,7 +20,8 @@ export default function Contact() {
       })
       if (!response.ok) throw new Error('Form submission failed')
       setStatus('success')
-    } catch {
+    } catch (error) {
+      console.error('Contact form submission failed:', error)
       setStatus('error')
     }
   }

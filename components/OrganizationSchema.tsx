@@ -1,6 +1,5 @@
 import Head from 'next/head'
-
-const SITE_URL = 'https://krodesign.is'
+import { SITE_URL, FACEBOOK_URL, INSTAGRAM_URL } from '../lib/siteConfig'
 
 const schema = {
   '@context': 'https://schema.org',
@@ -15,6 +14,7 @@ const schema = {
     '@type': 'City',
     name: 'Akureyri',
   },
+  sameAs: [FACEBOOK_URL, INSTAGRAM_URL],
 }
 
 export default function OrganizationSchema() {

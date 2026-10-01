@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { SITE_URL } from '../lib/siteConfig'
 
 type Props = {
   title: string
   description: string
 }
 
-const SITE_URL = 'https://krodesign.is'
 const OG_IMAGE = `${SITE_URL}/og-image.png`
 
 export default function Seo({ title, description }: Props) {
