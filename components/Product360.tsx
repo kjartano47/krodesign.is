@@ -1,15 +1,18 @@
 import { useCallback, useRef, useState } from 'react'
+import ExpandIcon from './ExpandIcon'
 
 type Product360Props = {
   images: string[]
   alt: string
   className?: string
+  onImageClick?: (src: string) => void
 }
 
-export default function Product360({ images, alt, className = '' }: Product360Props) {
+export default function Product360({ images, alt, className = '', onImageClick }: Product360Props) {
   const [frame, setFrame] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
   const draggingRef = useRef(false)
+  const dragMovedRef = useRef(false)
   const preloadedRef = useRef(false)
 
   const preloadRemainingFrames = useCallback(() => {
@@ -40,15 +43,26 @@ export default function Product360({ images, alt, className = '' }: Product360Pr
       onMouseMove={(e) => setFrameFromX(e.clientX)}
       onTouchStart={() => {
         draggingRef.current = true
+        dragMovedRef.current = false
         preloadRemainingFrames()
       }}
       onTouchEnd={() => {
         draggingRef.current = false
       }}
       onTouchMove={(e) => {
-        if (draggingRef.current) setFrameFromX(e.touches[0].clientX)
+        if (draggingRef.current) {
+          dragMovedRef.current = true
+          setFrameFromX(e.touches[0].clientX)
+        }
       }}
-      className={`relative select-none cursor-ew-resize ${className}`}
+      onClick={() => {
+        if (dragMovedRef.current) {
+          dragMovedRef.current = false
+          return
+        }
+        onImageClick?.(images[frame])
+      }}
+      className={`relative select-none group ${onImageClick ? 'cursor-zoom-in' : 'cursor-ew-resize'} ${className}`}
     >
       <img
         src={images[frame]}
@@ -56,6 +70,11 @@ export default function Product360({ images, alt, className = '' }: Product360Pr
         className="w-full h-full object-contain pointer-events-none"
         draggable={false}
       />
+      {onImageClick && (
+        <span className="absolute bottom-2 right-2 bg-black/60 text-white p-1.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <ExpandIcon />
+        </span>
+      )}
     </div>
   )
 }

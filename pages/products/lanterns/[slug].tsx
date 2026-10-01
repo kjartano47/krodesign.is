@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import Seo from '../../../components/Seo'
 import FlickerImage from '../../../components/FlickerImage'
+import Zoomable from '../../../components/Zoomable'
+import Lightbox from '../../../components/Lightbox'
 import { useTranslations } from '../../../lib/useTranslations'
 import { lanterns, lanternFlickerFrames } from '../../../lib/lanterns'
 import type { GetStaticPaths, GetStaticProps } from 'next'
@@ -17,10 +20,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export default function LanternDetail({ lantern }: { lantern: (typeof lanterns)[number] }) {
   const { t } = useTranslations()
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
   const imgClassName = 'imgClassName' in lantern ? lantern.imgClassName : undefined
   const galleryClassName = `w-full aspect-square object-cover border-2 border-black dark:border-white${
     imgClassName ? ' object-[85%_center]' : ''
   }`
+  const basePhoto = `/products/lanterns/${lantern.photo}.webp`
+  const photo2 = `/products/lanterns/${lantern.photo}-2.webp`
+  const photo3 = `/products/lanterns/${lantern.photo}-3.webp`
 
   return (
     <>
@@ -28,16 +35,22 @@ export default function LanternDetail({ lantern }: { lantern: (typeof lanterns)[
       <main className="flex-1 py-20">
         <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <div className="max-w-md mx-auto w-full space-y-4">
-            <FlickerImage
-              base={`/products/lanterns/${lantern.photo}.webp`}
-              overlayLayers={lantern.overlayPrefixes.map(lanternFlickerFrames)}
-              alt={t[lantern.titleKey]}
-              className="w-full aspect-square border-2 border-black dark:border-white"
-              imgClassName={imgClassName}
-            />
+            <Zoomable onClick={() => setLightboxSrc(basePhoto)} label={t[lantern.titleKey]}>
+              <FlickerImage
+                base={basePhoto}
+                overlayLayers={lantern.overlayPrefixes.map(lanternFlickerFrames)}
+                alt={t[lantern.titleKey]}
+                className="w-full aspect-square border-2 border-black dark:border-white"
+                imgClassName={imgClassName}
+              />
+            </Zoomable>
             <div className="grid grid-cols-2 gap-4">
-              <img src={`/products/lanterns/${lantern.photo}-2.webp`} alt={t[lantern.titleKey]} className={galleryClassName} />
-              <img src={`/products/lanterns/${lantern.photo}-3.webp`} alt={t[lantern.titleKey]} className={galleryClassName} />
+              <Zoomable onClick={() => setLightboxSrc(photo2)} label={t[lantern.titleKey]}>
+                <img src={photo2} alt={t[lantern.titleKey]} className={galleryClassName} />
+              </Zoomable>
+              <Zoomable onClick={() => setLightboxSrc(photo3)} label={t[lantern.titleKey]}>
+                <img src={photo3} alt={t[lantern.titleKey]} className={galleryClassName} />
+              </Zoomable>
             </div>
           </div>
           <div>
@@ -47,6 +60,7 @@ export default function LanternDetail({ lantern }: { lantern: (typeof lanterns)[
           </div>
         </div>
       </main>
+      <Lightbox src={lightboxSrc} alt={t[lantern.titleKey]} onClose={() => setLightboxSrc(null)} />
     </>
   )
 }

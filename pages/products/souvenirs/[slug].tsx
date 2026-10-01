@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import Seo from '../../../components/Seo'
 import Product360 from '../../../components/Product360'
+import Lightbox from '../../../components/Lightbox'
 import { useTranslations } from '../../../lib/useTranslations'
 import { getProductFrames } from '../../../lib/product360'
 import { souvenirs } from '../../../lib/souvenirs'
@@ -24,19 +26,26 @@ export default function SouvenirDetail({
   frames: string[]
 }) {
   const { t } = useTranslations()
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
 
   return (
     <>
       <Seo title={t[souvenir.metaTitleKey]} description={t[souvenir.metaDescKey]} />
       <main className="flex-1 py-20">
         <div className="max-w-4xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-          <Product360 images={frames} alt={t[souvenir.titleKey]} className="aspect-square max-w-md mx-auto" />
+          <Product360
+            images={frames}
+            alt={t[souvenir.titleKey]}
+            className="aspect-square max-w-md mx-auto"
+            onImageClick={setLightboxSrc}
+          />
           <div>
             <h1 className="text-3xl font-bold mb-4 break-words">{t[souvenir.titleKey]}</h1>
             <p className="text-gray-700 dark:text-gray-300 mb-6">{t[souvenir.descKey]}</p>
           </div>
         </div>
       </main>
+      <Lightbox src={lightboxSrc} alt={t[souvenir.titleKey]} onClose={() => setLightboxSrc(null)} />
     </>
   )
 }
