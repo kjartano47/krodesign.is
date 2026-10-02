@@ -3,12 +3,12 @@ import PageBanner from '../../../components/PageBanner'
 import AutoRotate360 from '../../../components/AutoRotate360'
 import ProductCardGrid from '../../../components/ProductCardGrid'
 import { useTranslations } from '../../../lib/useTranslations'
-import { getProductFrames } from '../../../lib/product360'
+import { getProductThumbFrames } from '../../../lib/product360'
 import { souvenirs } from '../../../lib/souvenirs'
 import type { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const images = Object.fromEntries(souvenirs.map((p) => [p.slug, getProductFrames(p.slug)]))
+  const images = Object.fromEntries(souvenirs.map((p) => [p.slug, getProductThumbFrames(p.slug)]))
   return { props: { images } }
 }
 

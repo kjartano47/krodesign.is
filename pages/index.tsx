@@ -3,15 +3,15 @@ import CategoryPreview from '../components/CategoryPreview'
 import Seo from '../components/Seo'
 import OrganizationSchema from '../components/OrganizationSchema'
 import { useTranslations } from '../lib/useTranslations'
-import { getProductFrames } from '../lib/product360'
+import { getProductThumbFrames } from '../lib/product360'
 import { useScrollScrub } from '../lib/useScrollScrub'
 import { usePulse } from '../lib/usePulse'
 import type { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
   const images = {
-    lanterns: ['/products/lanterns/lanterns-overview.webp'],
-    souvenirs: getProductFrames('fridge-magnets'),
+    lanterns: ['/products/lanterns/lanterns-overview-thumb.webp'],
+    souvenirs: getProductThumbFrames('fridge-magnets'),
   }
   return { props: { images } }
 }

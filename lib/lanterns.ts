@@ -1,6 +1,11 @@
 export const lanternFlickerFrames = (prefix: string) =>
   Array.from({ length: 8 }, (_, i) => `/products/lanterns/${prefix}-flicker-${i}.webp`)
 
+// small (240px) variants for the 80px overview-grid thumbnails, so that page doesn't
+// download full 1600x1200 frames just to show a tiny spinning icon
+export const lanternThumbFrames = (prefix: string) =>
+  Array.from({ length: 8 }, (_, i) => `/products/lanterns/${prefix}-flicker-${i}-thumb.webp`)
+
 export const lanterns = [
   {
     slug: 'lighthouse',

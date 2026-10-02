@@ -2,7 +2,7 @@ import Seo from '../../components/Seo'
 import PageBanner from '../../components/PageBanner'
 import ProductCardGrid from '../../components/ProductCardGrid'
 import { useTranslations } from '../../lib/useTranslations'
-import { getProductFrames } from '../../lib/product360'
+import { getProductThumbFrames } from '../../lib/product360'
 import type { GetStaticProps } from 'next'
 
 const groups = [
@@ -12,8 +12,8 @@ const groups = [
 
 export const getStaticProps: GetStaticProps = async () => {
   const images: Record<string, string | null> = {
-    lanterns: '/products/lanterns/lanterns-overview.webp',
-    souvenirs: getProductFrames('fridge-magnets')[0] ?? null,
+    lanterns: '/products/lanterns/lanterns-overview-thumb.webp',
+    souvenirs: getProductThumbFrames('fridge-magnets')[0] ?? null,
   }
   return { props: { images } }
 }

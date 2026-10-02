@@ -3,7 +3,7 @@ import PageBanner from '../../../components/PageBanner'
 import FlickerImage from '../../../components/FlickerImage'
 import ProductCardGrid from '../../../components/ProductCardGrid'
 import { useTranslations } from '../../../lib/useTranslations'
-import { lanterns, lanternFlickerFrames } from '../../../lib/lanterns'
+import { lanterns, lanternThumbFrames } from '../../../lib/lanterns'
 
 export default function LanternsPage() {
   const { t } = useTranslations()
@@ -23,8 +23,8 @@ export default function LanternsPage() {
                 desc: [t[l.descKey], t[l.sizeKey]],
                 thumbnail: (
                   <FlickerImage
-                    base={`/products/lanterns/${l.photo}.webp`}
-                    overlayLayers={l.overlayPrefixes.map(lanternFlickerFrames)}
+                    base={`/products/lanterns/${l.photo}-thumb.webp`}
+                    overlayLayers={l.overlayPrefixes.map(lanternThumbFrames)}
                     alt={t[l.titleKey]}
                     className="w-20 h-20 shrink-0 border-2 border-black dark:border-white"
                     imgClassName={'imgClassName' in l ? l.imgClassName : undefined}
