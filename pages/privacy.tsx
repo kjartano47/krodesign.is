@@ -11,6 +11,7 @@ export default function Privacy() {
         <div className="max-w-3xl mx-auto px-6">
           <h1 className="text-3xl font-bold mb-4 break-words">{t.privacyPageTitle}</h1>
           <p className="mb-6 text-gray-700 dark:text-gray-300">{t.privacyIntro}</p>
+          <p className="mb-6 text-gray-700 dark:text-gray-300">{t.privacyController}</p>
           <p className="mb-6 text-gray-700 dark:text-gray-300">{t.privacyParagraph1}</p>
           <p className="mb-6 text-gray-700 dark:text-gray-300">{t.privacyParagraph2}</p>
           <p className="mb-6 text-gray-700 dark:text-gray-300">

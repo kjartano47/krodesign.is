@@ -23,3 +23,7 @@ Visit http://localhost:3000 (Icelandic). Use `/en` for English.
 ## Deployment
 
 Deploys to Netlify from the `main` branch of this repository (automatic deploy on every push, preview deploys on pull requests). Netlify's Next.js Runtime auto-detects this project, no `netlify.toml` is required. Requires Node.js >=20.9.0 (see `engines` in package.json).
+
+## Analytics
+
+Cookieless page-view analytics via [GoatCounter](https://www.goatcounter.com/) (site: `krodesign.goatcounter.com`), loaded only in production builds (see `pages/_document.tsx`). No cookies, no personal data, no consent banner needed.

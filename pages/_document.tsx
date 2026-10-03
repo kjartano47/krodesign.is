@@ -20,6 +20,13 @@ export default class MyDocument extends Document<{ locale: string }> {
           <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
           <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
           <link rel="manifest" href="/site.webmanifest" />
+          {process.env.NODE_ENV === 'production' && (
+            <script
+              data-goatcounter="https://krodesign.goatcounter.com/count"
+              async
+              src="https://gc.zgo.at/count.js"
+            />
+          )}
         </Head>
         <body>
           <Main />
